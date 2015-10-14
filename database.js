@@ -497,7 +497,13 @@ exports.deliveredMessage = function(messageId, userId, callback){
                 }else if(rows.length == 0){
                     console.log("No house Id for read message")
                 }else{
-                    callback(rows[0].house_id);
+					var houseId = rows[0].house_id;
+                    callback(houseId);
+					connection.query('UPDATE favorites SET delivered = 1 WHERE user_id = ? && house_id = ?', [userId, houseId], function(err, result){
+						if(err){
+							console.log(err)
+						}
+					});
                 }
             });
         }
