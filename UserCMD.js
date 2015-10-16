@@ -21,10 +21,10 @@ module.exports = function(io, db, socket){
     socket.join(USER + socket.user.id)
 
     function log(string){
-        var id = pad(4, socket.user.id, " ");
-        var username = pad(7, socket.user.username, " ");
-        var command = pad(35, string, " ");
-        console.log("id: " + id + " u: " + username + " i: " + command + " ip: "  + ip);
+        var id = pad(5, socket.user.id, " ");
+        var username = pad(8, socket.user.username, " ");
+        var command = pad(48, string, " ");
+        console.log(id + " " + username + " " + command + " "  + ip);
     }
 
     function pad(width, string, pad) {

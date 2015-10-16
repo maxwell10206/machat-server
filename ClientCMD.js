@@ -9,10 +9,10 @@ module.exports = function(io, db, socket){
     var ip = socket.conn.remoteAddress
 
     function log(string){
-        var id = pad(4, "-", " ");
-        var username = pad(7, "-", " ");
-        var command = pad(35, string, " ");
-        console.log("id: " + id + " u: " + username + " i: " + command + " ip: "  + ip);
+        var id = pad(5, "", " ");
+        var username = pad(8, "", " ");
+        var command = pad(48, string, " ");
+        console.log(id + " " + username + " " + command + " "  + ip);
     }
 
     function pad(width, string, pad) {
