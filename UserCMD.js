@@ -17,6 +17,7 @@ var SUCCESS = {succ: true}
 module.exports = function(io, db, socket){
 
     var ip = socket.conn.remoteAddress
+	ip = ip.substring(ip.lastIndexOf(":") + 1);
 
     socket.join(USER + socket.user.id)
 

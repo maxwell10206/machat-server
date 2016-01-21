@@ -7,11 +7,12 @@ var validate = require('./validation');
 module.exports = function(io, db, socket){
 
     var ip = socket.conn.remoteAddress
+	ip = ip.substring(ip.lastIndexOf(":") + 1);
 
-    function log(string){
+    function log(str){
         var id = pad(5, "", " ");
         var username = pad(8, "", " ");
-        var command = pad(48, string, " ");
+        var command = pad(48, str, " ");
         console.log(id + " " + username + " " + command + " "  + ip);
     }
 

@@ -1,3 +1,7 @@
+/**
+ * Created by Admin on 7/2/15.
+ */
+
 exports.LOGIN = "login";
 
 exports.LOGIN_SESSION = "loginSession";
